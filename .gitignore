@@ -13,3 +13,6 @@ outputs_resnet/models/
 # Environment files
 .venv/
 .env
+
+# Local agent notes / keys (must stay local)
+agents.md
