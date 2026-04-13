@@ -1,0 +1,4 @@
+                system             algorithm  accuracy     f1  roc_auc  train_time_sec  infer_time_sec  peak_rss_mb  model_size_mb                            parallelism                                             notes
+single_machine_sklearn   Logistic Regression    0.9250 0.6508   0.9109          1.9880          0.0027     540.1758         0.0027                  CPU cores available=8                     Baseline single-node training
+      distributed_dask   Logistic Regression    0.9247 0.6488   0.9110         77.2755          0.1674     650.3203         0.0013 3 workers x 2 threads (processes=True)                             Dask local simulation
+ deep_learning_pytorch Neural Logistic (MLP)    0.9849 0.9384   0.9630          5.2760          0.0034     702.3867         0.0161                 torch_threads=8 on CPU 2-layer MLP for same binary classification target

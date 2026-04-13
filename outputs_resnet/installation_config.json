@@ -1,0 +1,95 @@
+{
+  "single_machine_system": {
+    "name": "PyTorch single process on one server",
+    "python": "3.10+",
+    "packages": [
+      "torch",
+      "torchvision",
+      "numpy",
+      "pandas",
+      "scikit-learn",
+      "psutil"
+    ],
+    "model": {
+      "pretrained": true,
+      "freeze_backbone": true,
+      "epochs": 2,
+      "batch_size": 96,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "input_size": 112
+    }
+  },
+  "distributed_system": {
+    "name": "PyTorch DDP (DistributedDataParallel)",
+    "python": "3.10+",
+    "packages": [
+      "torch",
+      "torchvision",
+      "numpy",
+      "pandas",
+      "scikit-learn",
+      "psutil"
+    ],
+    "cluster_mode": "local_simulation",
+    "local_simulation": {
+      "world_size": 2,
+      "master_addr": "127.0.0.1",
+      "master_port": 29531,
+      "epochs": 2,
+      "batch_size_per_process": 64,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "pretrained": true,
+      "freeze_backbone": true,
+      "input_size": 112
+    },
+    "remote_cluster": {
+      "master_addr": "192.168.10.10",
+      "master_port": 29531,
+      "nnodes": 3,
+      "node_rank": 0,
+      "nproc_per_node": 1,
+      "world_size": 3,
+      "worker_nodes": [
+        {
+          "name": "node-0",
+          "ip": "192.168.10.10",
+          "port": 29531
+        },
+        {
+          "name": "node-1",
+          "ip": "192.168.10.11",
+          "port": 29531
+        },
+        {
+          "name": "node-2",
+          "ip": "192.168.10.12",
+          "port": 29531
+        }
+      ],
+      "how_to_expand": "Append worker_nodes and update world_size/nnodes accordingly."
+    }
+  },
+  "deep_learning_system": {
+    "name": "PyTorch advanced fine-tuning pipeline",
+    "python": "3.10+",
+    "packages": [
+      "torch",
+      "torchvision",
+      "numpy",
+      "pandas",
+      "scikit-learn",
+      "psutil"
+    ],
+    "model": {
+      "pretrained": true,
+      "freeze_backbone": false,
+      "epochs": 1,
+      "batch_size": 32,
+      "learning_rate": 5e-05,
+      "weight_decay": 0.0001,
+      "input_size": 112
+    }
+  }
+}

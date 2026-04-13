@@ -1,0 +1,67 @@
+{
+  "single_machine_system": {
+    "name": "scikit-learn on one node",
+    "python": "3.10+",
+    "packages": [
+      "numpy",
+      "pandas",
+      "scikit-learn",
+      "joblib",
+      "psutil"
+    ]
+  },
+  "distributed_system": {
+    "name": "Dask Distributed",
+    "python": "3.10+",
+    "packages": [
+      "dask",
+      "distributed",
+      "dask-ml",
+      "numpy",
+      "pandas",
+      "psutil"
+    ],
+    "cluster_mode": "local_simulation",
+    "local_simulation": {
+      "n_workers": 3,
+      "threads_per_worker": 2,
+      "processes": true,
+      "memory_limit": "2GB",
+      "dashboard_address": null
+    },
+    "remote_cluster": {
+      "scheduler_address": "tcp://192.168.10.10:8786",
+      "worker_nodes": [
+        {
+          "name": "worker-1",
+          "ip": "192.168.10.11",
+          "port": 8786
+        },
+        {
+          "name": "worker-2",
+          "ip": "192.168.10.12",
+          "port": 8786
+        }
+      ],
+      "how_to_expand": "Add more worker_nodes entries with target machine IP and port."
+    }
+  },
+  "deep_learning_system": {
+    "name": "PyTorch CPU",
+    "python": "3.10+",
+    "packages": [
+      "torch",
+      "numpy",
+      "pandas",
+      "scikit-learn",
+      "psutil"
+    ],
+    "device": "cpu",
+    "model": {
+      "hidden_dim": 64,
+      "epochs": 12,
+      "batch_size": 512,
+      "learning_rate": 0.001
+    }
+  }
+}

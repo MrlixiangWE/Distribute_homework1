@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local datasets
+/data/
+
+# Generated model binaries (large)
+outputs/models/
+outputs_vision/models/
+outputs_resnet/models/
+
+# Environment files
+.venv/
+.env

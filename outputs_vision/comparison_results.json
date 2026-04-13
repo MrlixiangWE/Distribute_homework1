@@ -1,0 +1,58 @@
+[
+  {
+    "system":"single_machine_sklearn",
+    "algorithm_case":"Softmax Regression (Image Features)",
+    "accuracy":0.3344,
+    "macro_f1":0.3458,
+    "macro_auc_ovr":0.7762,
+    "top3_acc":0.6096,
+    "train_time_sec":2.7118,
+    "infer_time_sec":0.0079,
+    "peak_memory_mb":778.1992,
+    "model_size_mb":0.0488,
+    "parallelism":"CPU cores available=8",
+    "notes":"Single node SGD softmax on pooled visual features"
+  },
+  {
+    "system":"distributed_dask",
+    "algorithm_case":"Softmax Regression (Image Features)",
+    "accuracy":0.2628,
+    "macro_f1":0.2586,
+    "macro_auc_ovr":0.693,
+    "top3_acc":0.551,
+    "train_time_sec":3.292,
+    "infer_time_sec":0.0694,
+    "peak_memory_mb":2591.2227,
+    "model_size_mb":0.08,
+    "parallelism":"3 workers x 2 threads (processes=True)",
+    "notes":"Dask distributed incremental SGD softmax (local simulation by default)"
+  },
+  {
+    "system":"deep_learning_pytorch",
+    "algorithm_case":"Softmax Regression (Image Features)",
+    "accuracy":0.3586,
+    "macro_f1":0.3576,
+    "macro_auc_ovr":0.7903,
+    "top3_acc":0.6848,
+    "train_time_sec":2.0657,
+    "infer_time_sec":0.003,
+    "peak_memory_mb":905.1445,
+    "model_size_mb":0.0493,
+    "parallelism":"torch_threads=8 on CPU",
+    "notes":"PyTorch implementation of multiclass softmax regression"
+  },
+  {
+    "system":"deep_learning_pytorch",
+    "algorithm_case":"ResNet18 Transfer (Raw Images)",
+    "accuracy":0.7353,
+    "macro_f1":0.7337,
+    "macro_auc_ovr":0.965,
+    "top3_acc":0.9407,
+    "train_time_sec":136.3126,
+    "infer_time_sec":16.277,
+    "peak_memory_mb":1557.0977,
+    "model_size_mb":42.7304,
+    "parallelism":"torch_threads=8 on CPU",
+    "notes":"Pretrained ResNet18 transfer learning baseline"
+  }
+]

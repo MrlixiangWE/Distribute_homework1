@@ -1,0 +1,5 @@
+system,algorithm_case,accuracy,macro_f1,macro_auc_ovr,top3_acc,train_time_sec,infer_time_sec,peak_memory_mb,model_size_mb,parallelism,notes
+single_machine_sklearn,Softmax Regression (Image Features),0.3344,0.3458,0.7762,0.6096,2.7118,0.0079,778.1992,0.0488,CPU cores available=8,Single node SGD softmax on pooled visual features
+distributed_dask,Softmax Regression (Image Features),0.2628,0.2586,0.693,0.551,3.292,0.0694,2591.2227,0.08,3 workers x 2 threads (processes=True),Dask distributed incremental SGD softmax (local simulation by default)
+deep_learning_pytorch,Softmax Regression (Image Features),0.3586,0.3576,0.7903,0.6848,2.0657,0.003,905.1445,0.0493,torch_threads=8 on CPU,PyTorch implementation of multiclass softmax regression
+deep_learning_pytorch,ResNet18 Transfer (Raw Images),0.7353,0.7337,0.965,0.9407,136.3126,16.277,1557.0977,42.7304,torch_threads=8 on CPU,Pretrained ResNet18 transfer learning baseline

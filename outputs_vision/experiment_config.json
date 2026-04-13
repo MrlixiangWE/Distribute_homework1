@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "num_classes": 10,
+  "dataset_config": {
+    "name": "cifar10_visual_scene_object_classification",
+    "image_size": [
+      32,
+      32,
+      3
+    ],
+    "train_subset": 20000,
+    "test_subset": 5000,
+    "resnet_train_subset": 6000,
+    "resnet_test_subset": 1500
+  },
+  "total_runtime_sec": 170.35566349793226
+}

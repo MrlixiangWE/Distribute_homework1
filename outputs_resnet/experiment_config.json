@@ -1,0 +1,10 @@
+{
+  "seed": 42,
+  "num_classes": 10,
+  "dataset_config": {
+    "name": "cifar10_visual_classification_resnet",
+    "train_subset": 6000,
+    "test_subset": 1500
+  },
+  "total_runtime_sec": 151.87710459530354
+}
